@@ -1,0 +1,59 @@
+{{!< layouts/main}}
+
+<style>
+form {
+    margin: 20px;
+    padding: 20px;
+    border: 1px solid #ccc;
+    background-color: #f9f9f9;
+    border-radius: 5px;
+}
+
+form label {
+    display: block;
+    margin-bottom: 10px;
+    font-weight: bold;
+}
+
+form input[type="text"],
+form select {
+    width: 100%;
+    padding: 10px;
+    margin-bottom: 10px;
+    border: 1px solid #ccc;
+    border-radius: 3px;
+}
+
+form button {
+    background-color: #007bff;
+    color: #fff;
+    padding: 10px 20px;
+    border: none;
+    border-radius: 3px;
+    cursor: pointer;
+}
+</style>
+<form method="POST" action="/orders">
+    <input type="hidden" name="productid" value="{{this.id}}">
+    <label for="fio">Ism Familiyasi:</label>
+    <input type="text" id="fio" name="fio" required>
+    <label for="region">Region:</label>
+    <select id="region" name="region" required>
+        <option value="Toshkent">Toshkent</option>
+        <option value="Samarqand">Samarqand</option>
+        <option value="Andijon">Andijon</option>
+        <option value="Namangan">Namangan</option>
+        <option value="Farg'ona">Farg'ona</option>
+        <option value="Sirdaryo">Sirdaryo</option>
+        <option value="Jizzax">Jizzax</option>
+        <option value="Qashqadaryo">Qashqadaryo</option>
+        <option value="Surhandaryo">Surhandaryo</option>
+        <option value="Navoiy">Navoiy</option>
+        <option value="Buxoro">Buxoro</option>
+        <option value="Xorazim">Xorazim</option>
+        <option value="Qoraqolpog'iston respuplikasi">Qoraqolpog'iston respuplikasi</option>
+    </select>
+    <label for="phone">Telefon raqam:</label>
+    <input type="text" id="phone" name="phone" pattern="^\+\d{3}\s\d{2}\s\d{3}-\d{2}-\d{2}$" placeholder="+998 99 123-45-67" required>
+    <button type="submit">Buyurtma Berish</button>
+</form> 

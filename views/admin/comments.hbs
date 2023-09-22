@@ -1,0 +1,54 @@
+{{!< layouts/main}}
+<style>
+.comment {
+  margin-bottom: 20px;
+  padding: 10px;
+  border: 1px solid #ccc;
+  background-color: #f9f9f9;
+}
+
+.comment strong {
+  font-weight: bold;
+}
+
+.comment p {
+  margin: 0;
+}
+
+h1 {
+  font-size: 24px;
+  color: #333;
+  text-align: center;
+}
+
+#comments {
+  margin-top: 20px;
+}
+
+button {
+  background-color: red;
+  color: white;
+  border: none;
+  padding: 5px 10px;
+  cursor: pointer;
+  font-size: 14px;
+  border-radius: 4px;
+}
+
+button:hover {
+  background-color: darkred;
+}
+
+</style>
+<div id="comments">
+  {{#each comments}}
+  <div class="comment">
+    <p>{{this.id}}</p>
+    <strong>{{this.email}}:</strong>
+    <p>{{this.text}}</p>
+    <form method="POST" action="/admin/comments/{{this.id}}/delete">
+           <button type="submit">O'chirish</button>
+         </form>
+  </div>
+  {{/each}}
+</div>

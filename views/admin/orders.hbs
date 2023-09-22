@@ -1,0 +1,35 @@
+{{!< layouts/main}}
+<style>
+  .order-list {
+  list-style-type: none;
+  padding: 0;
+}
+
+.order-item {
+  background-color: #f4f4f4;
+  border: 1px solid #ddd;
+  margin-bottom: 10px;
+  padding: 10px;
+}
+
+.order-item p {
+  margin: 0;
+  padding: 5px 0;
+}
+
+.order-id {
+  font-weight: bold;
+}
+</style>
+
+<h1>Buyurtmalar</h1>
+<ul class="order-list">
+  {{#each orders}}
+    <li class="order-item">
+      <p class="order-id">ID: {{this.id}}</p>
+      <p class="order-fio">FIO: {{this.fio}}</p>
+      <p class="order-region">Region: {{this.region}}</p>
+      <p class="order-phone">Phone: {{this.phone}}</p>
+    </li>
+  {{/each}}
+</ul>

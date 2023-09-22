@@ -1,0 +1,73 @@
+{{!< layouts/main}}
+
+<style>
+h2 {
+    text-align: center;
+    font-size: 24px;
+    margin-bottom: 20px;
+}
+
+table {
+    width: 100%;
+    border-collapse: collapse;
+    margin-top: 20px;
+    font-size: 16px;
+}
+
+th {
+    background-color: #007bff;
+    color: #fff;
+    text-align: left;
+    padding: 10px;
+}
+
+tr:nth-child(even) {
+    background-color: #f2f2f2;
+}
+
+td {
+    padding: 10px;
+}
+
+td a {
+    text-decoration: none;
+    color: #007bff;
+}
+
+td a:hover {
+    text-decoration: underline;
+}
+
+</style>
+<h1>{{pageTitle}}</h1>
+<h2>Tovarlar ro'yxati:</h2>
+<table>
+  <thead>
+    <tr>
+      <th>ID</th>
+      <th>Nomi</th>
+      <th>Rasm URL</th>
+      <th>Ta'rif</th>
+      <th>Miqdori</th>
+      <th></th>
+    </tr>
+  </thead>
+  <tbody>
+    {{#each products}}
+      <tr>
+        <td>{{this.id}}</td>
+        <td>{{this.title}}</td>
+        <td><img src="{{this.image}}" alt="{{this.title}}" width="50" ></td>
+        <td>{{this.description}}</td>
+        <td>{{this.amount}}</td>
+        <td>
+          <a href="/admin/edit-product/{{this.id}}">Tahrirlash</a>
+         <form method="POST" action="/admin/products/{{this.id}}/delete">
+           <button style="color: red;" type="submit">O'chirish</button>
+         </form>
+        </td>
+      </tr>
+    {{/each}}
+  </tbody>
+</table>
+

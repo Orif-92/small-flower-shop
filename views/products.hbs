@@ -1,0 +1,86 @@
+{{!< layouts/main}}
+<style>
+  #products {
+    display: flex;
+    flex-wrap: wrap;
+    justify-content: space-between;
+     text-align: center;
+}
+
+h1 {
+  text-align: center;
+  color: crimson;
+}
+
+.product {
+    width: 30%;
+    margin-bottom: 20px;
+    padding: 10px;
+    border: 1px solid #ddd;
+}
+
+.product h2 {
+    font-size: 20px;
+    margin-bottom: 10px;
+}
+
+.product img {
+    max-width: 100%;
+}
+
+.product p {
+    font-size: 16px;
+}
+
+.product form {
+    margin-top: 10px;
+}
+
+.product form label,
+.product form input,
+.product form select,
+.product form button {
+    display: block;
+    margin-bottom: 10px;
+}
+
+.product form button {
+    background-color: #007bff;
+    color: #fff;
+    border: none;
+    padding: 10px 20px;
+    cursor: pointer;
+}
+
+.product a {
+    display: block;
+    margin-top: 10px;
+    background-color: #007bff;
+    color: #fff;
+    text-decoration: none;
+    padding: 5px 10px;
+    border-radius: 5px;
+}
+
+.product a:hover {
+    background-color: #0056b3;
+}
+
+</style>
+
+  <h1>Gullar</h1>
+
+    <div id="products">
+        {{#each products}}
+        <div class="product">
+            <h2>{{this.title}}</h2>
+            <img src="{{this.image}}" alt="{{this.title}}" width="450" >
+            <p>{{this.description}}</p>
+            <p>Narxi: ${{this.amount}}</p>
+
+           <a href="/orders">Buyurtma Berish</a>
+
+           <a href="/comments">Izohlar</a>
+        </div>
+        {{/each}}
+    </div>
