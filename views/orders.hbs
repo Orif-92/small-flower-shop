@@ -33,7 +33,7 @@ form button {
     cursor: pointer;
 }
 </style>
-<form method="POST" action="/orders">
+<form method="POST" action="/orders" enctype="application/x-www-form-urlencoded">
     <input type="hidden" name="productid" value="{{this.id}}">
     <label for="fio">Ism Familiyasi:</label>
     <input type="text" id="fio" name="fio" required>

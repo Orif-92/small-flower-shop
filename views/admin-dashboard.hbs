@@ -3,7 +3,8 @@
 <style>
 h1 {
   font-size: 24px;
-  color: #333; 
+  color: #333;
+  text-align: center;
 }
 
 input[type="text"],
@@ -52,15 +53,13 @@ h2 {
     text-decoration: none;
     padding: 5px 10px;
     border-radius: 5px;
+    text-align: center;
 }
 
  a:hover {
     background-color: #0056b3;
 }
     </style>
-    <a href="/admin/products">Maxsulotlar</a>
-    <a href="/admin/comments">Izohlar</a>
-    <a href="/admin/orders">Buyurtmalar</a>
     <h1>Yangi Tovar Qo'shish</h1>
     <form action="admin-dashboard" method="POST" enctype="application/x-www-form-urlencoded">
         <label for="title">Nomi:</label>
@@ -77,6 +76,9 @@ h2 {
         
         <input type="submit" value="Saqlash">
     </form>
+    <a href="/admin/products">Maxsulotlar</a>
+    <a href="/admin/comments">Izohlar</a>
+    <a href="/admin/orders">Buyurtmalar</a>
 
   
 
